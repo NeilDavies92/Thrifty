@@ -5,12 +5,20 @@ import (
 )
 
 func TestHello(t *testing.T) {
+	returnCorrectMessage := func(t testing.TB, got, want string) {
+		t.Helper()
+
+		if got != want {
+			t.Errorf("got %q want %q", got, want)
+		}
+	}
+
 	t.Run("Say hello to a specific person", func(t *testing.T) {
 		got := Hello("Neil")
 		want := "Hello, Neil"
 
 		if got != want {
-			t.Errorf("got %q want %q", got, want)
+			returnCorrectMessage(t, got, want)
 		}
 	})
 
@@ -19,7 +27,7 @@ func TestHello(t *testing.T) {
 		want := "Hello World"
 
 		if got != want {
-			t.Errorf("got %q want %q", got, want)
+			returnCorrectMessage(t, got, want)
 		}
 	})
 
