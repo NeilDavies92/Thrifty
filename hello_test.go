@@ -5,10 +5,30 @@ import (
 )
 
 func TestHello(t *testing.T) {
-	got := Hello("Neil")
-	want := "Hello, Neil"
+	returnCorrectMessage := func(t testing.TB, got, want string) {
+		t.Helper()
 
-	if got != want {
-		t.Errorf("got %q want %q", got, want)
+		if got != want {
+			t.Errorf("got %q want %q", got, want)
+		}
 	}
+
+	t.Run("Say hello to a specific person", func(t *testing.T) {
+		got := Hello("Neil")
+		want := "Hello, Neil"
+
+		if got != want {
+			returnCorrectMessage(t, got, want)
+		}
+	})
+
+	t.Run("Say hello world if empty string", func(t *testing.T) {
+		got := Hello("")
+		want := "Hello World"
+
+		if got != want {
+			returnCorrectMessage(t, got, want)
+		}
+	})
+
 }
