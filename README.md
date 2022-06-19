@@ -1,2 +1,2 @@
 # Thrifty
-Bill management and savings app
+Eventual Bill management and savings app
