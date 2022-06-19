@@ -4,7 +4,8 @@ import (
 	"fmt"
 )
 
-const sayHello = "Hello, "
+const italian = "Italian"
+const englishHello = "Hello, "
 const italianHello = "Ciao, "
 
 func Hello(name string, language string) string {
@@ -12,10 +13,10 @@ func Hello(name string, language string) string {
 		name = "World"
 	}
 
-	if language == "Italian" {
-		return "Ciao, " + name
+	if language == italian {
+		return italianHello + name
 	}
-	return sayHello + name
+	return englishHello + name
 }
 
 func main() {
