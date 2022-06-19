@@ -14,7 +14,7 @@ func TestHello(t *testing.T) {
 	}
 
 	t.Run("Say hello to a specific person", func(t *testing.T) {
-		got := Hello("Neil")
+		got := Hello("Neil", "")
 		want := "Hello, Neil"
 
 		if got != want {
@@ -23,7 +23,7 @@ func TestHello(t *testing.T) {
 	})
 
 	t.Run("Say hello world if empty string", func(t *testing.T) {
-		got := Hello("")
+		got := Hello("", "")
 		want := "Hello, World"
 
 		if got != want {
@@ -31,4 +31,21 @@ func TestHello(t *testing.T) {
 		}
 	})
 
+	t.Run("In italian", func(t *testing.T) {
+		got := Hello("Neil", "Italian")
+		want := "Ciao, Neil"
+
+		if got != want {
+			returnCorrectMessage(t, got, want)
+		}
+	})
+
+	t.Run("In french", func(t *testing.T) {
+		got := Hello("Neil", "French")
+		want := "Bonjour, Neil"
+
+		if got != want {
+			returnCorrectMessage(t, got, want)
+		}
+	})
 }
