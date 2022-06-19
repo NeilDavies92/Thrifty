@@ -5,18 +5,29 @@ import (
 )
 
 const italian = "Italian"
-const englishHello = "Hello, "
-const italianHello = "Ciao, "
+const french = "French"
+const bonjour = "Bonjour, "
+const hello = "Hello, "
+const ciao = "Ciao, "
 
 func Hello(name string, language string) string {
 	if name == "" {
 		name = "World"
 	}
+	return Greeting(language) + name
+}
 
-	if language == italian {
-		return italianHello + name
+func Greeting(language string) (prefix string) {
+	// switch statements handle multiple if
+	switch language {
+	case french:
+		prefix = bonjour
+	case italian:
+		prefix = ciao
+	default:
+		prefix = hello
 	}
-	return englishHello + name
+	return
 }
 
 func main() {

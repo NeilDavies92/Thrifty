@@ -39,4 +39,13 @@ func TestHello(t *testing.T) {
 			returnCorrectMessage(t, got, want)
 		}
 	})
+
+	t.Run("In french", func(t *testing.T) {
+		got := Hello("Neil", "French")
+		want := "Bonjour, Neil"
+
+		if got != want {
+			returnCorrectMessage(t, got, want)
+		}
+	})
 }
