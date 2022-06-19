@@ -10,6 +10,7 @@ const bonjour = "Bonjour, "
 const hello = "Hello, "
 const ciao = "Ciao, "
 
+// Public functions start with a capital letter
 func Hello(name string, language string) string {
 	if name == "" {
 		name = "World"
@@ -17,7 +18,8 @@ func Hello(name string, language string) string {
 	return Greeting(language) + name
 }
 
-func Greeting(language string) (prefix string) {
+// Private functions start with a lower case letter
+func setGreeting(language string) (prefix string) {
 	// switch statements handle multiple if
 	switch language {
 	case french:
