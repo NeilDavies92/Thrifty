@@ -24,7 +24,7 @@ func TestHello(t *testing.T) {
 
 	t.Run("Say hello world if empty string", func(t *testing.T) {
 		got := Hello("")
-		want := "Hello World"
+		want := "Hello, World"
 
 		if got != want {
 			returnCorrectMessage(t, got, want)
