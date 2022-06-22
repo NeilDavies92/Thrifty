@@ -20,7 +20,7 @@ func TestSum(t *testing.T) {
 
 		numbers := []int{7, 8, 9}
 
-		got := Sum(numbers)
+		got := Slice(numbers)
 		want := 24
 
 		if got != want {
