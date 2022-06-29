@@ -3,8 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	for i := 0; i <= 100; i++ {
-		fmt.Println(i)
+	for i := 1; i <= 100; i++ {
 
 		// Divisible by 3
 		if i%3 == 0 {
