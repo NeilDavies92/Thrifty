@@ -4,24 +4,12 @@ import (
 	"testing"
 )
 
-// Calculate the perimiter of a rectangle
-func TestPerimiter(t *testing.T) {
-	rectangle := Rectangle{10.0, 10.0}
-	got := Perimiter(rectangle)
-	want := 40.0
-
-	if got != want {
-		// %.2f = placeholder for 2 decimal place floating int
-		t.Errorf("got %.2f want %.2f", got, want)
-	}
-}
-
-// Calculate the perimiter of a rectangle
 func TestArea(t *testing.T) {
 
+	// Test for finding the area of a rectangle
 	t.Run("rectangles", func(t *testing.T) {
 		rectangle := Rectangle{12.0, 6.0}
-		got := Area(rectangle)
+		got := rectangle.Area()
 		want := 72.0
 
 		if got != want {
@@ -30,6 +18,7 @@ func TestArea(t *testing.T) {
 		}
 	})
 
+	// Test for finding the area of a circle
 	t.Run("circles", func(t *testing.T) {
 		circle := Circle{10}
 		got := circle.Area()
