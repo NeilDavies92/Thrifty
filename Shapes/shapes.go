@@ -4,8 +4,11 @@ import (
 	"math"
 )
 
-// Shape types with added methods
+type Shape interface {
+	Area() float64
+}
 
+// Shape types with added methods
 type Rectangle struct {
 	Width  float64
 	Height float64

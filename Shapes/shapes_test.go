@@ -6,27 +6,23 @@ import (
 
 func TestArea(t *testing.T) {
 
+	checkArea := func(t testing.TB, shape Shape, want float64) {
+		t.Helper()
+		got := shape.Area()
+		if got != want {
+			t.Errorf("got %.2g want %.2g", got, want)
+		}
+	}
+
 	// Test for finding the area of a rectangle
 	t.Run("rectangles", func(t *testing.T) {
 		rectangle := Rectangle{12.0, 6.0}
-		got := rectangle.Area()
-		want := 72.0
-
-		if got != want {
-			// %.2f = placeholder for 2 decimal place floating point number
-			t.Errorf("got %.2f want %.2f", got, want)
-		}
+		checkArea(t, rectangle, 72.0)
 	})
 
 	// Test for finding the area of a circle
 	t.Run("circles", func(t *testing.T) {
 		circle := Circle{10}
-		got := circle.Area()
-		want := 314.1592653589793
-
-		if got != want {
-			// %.2g = placeholder for more precise decimal place floating point  number
-			t.Errorf("got %.2g want %.2g", got, want)
-		}
+		checkArea(t, circle, 314.1592653589793)
 	})
 }
