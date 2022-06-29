@@ -1,14 +1,20 @@
 package perimiter
 
+// Shape types with added methods
+
 type Rectangle struct {
 	Width  float64
 	Height float64
 }
 
-func Perimiter(rectangle Rectangle) float64 {
-	return 2 * (rectangle.Height + rectangle.Width)
+func (r Rectangle) Area() float64 {
+	return 0
 }
 
-func Area(rectangle Rectangle) float64 {
-	return rectangle.Width * rectangle.Height
+type Circle struct {
+	Radius float64
+}
+
+func (c Circle) Area() float64 {
+	return 0
 }

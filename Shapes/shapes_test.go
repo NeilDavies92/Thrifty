@@ -25,19 +25,19 @@ func TestArea(t *testing.T) {
 		want := 72.0
 
 		if got != want {
-			// %.2f = placeholder for 2 decimal place floating int
+			// %.2f = placeholder for 2 decimal place floating point number
 			t.Errorf("got %.2f want %.2f", got, want)
 		}
 	})
 
 	t.Run("circles", func(t *testing.T) {
 		circle := Circle{10}
-		got := Area(circle)
+		got := circle.Area()
 		want := 314.1592653589793
 
 		if got != want {
-			// %.2f = placeholder for 2 decimal place floating int
-			t.Errorf("got %.2f want %.2f", got, want)
+			// %.2g = placeholder for more precise decimal place floating point  number
+			t.Errorf("got %.2g want %.2g", got, want)
 		}
 	})
 }
