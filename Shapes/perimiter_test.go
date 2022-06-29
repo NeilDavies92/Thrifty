@@ -6,7 +6,8 @@ import (
 
 // Calculate the perimiter of a rectangle
 func TestPerimiter(t *testing.T) {
-	got := Perimiter(10.0, 10.0)
+	rectangle := Rectangle{10.0, 10.0}
+	got := Perimiter(rectangle)
 	want := 40.0
 
 	if got != want {
@@ -17,7 +18,8 @@ func TestPerimiter(t *testing.T) {
 
 // Calculate the perimiter of a rectangle
 func TestArea(t *testing.T) {
-	got := Area(12.0, 6.0)
+	rectangle := Rectangle{12.0, 6.0}
+	got := Area(rectangle)
 	want := 72.0
 
 	if got != want {
