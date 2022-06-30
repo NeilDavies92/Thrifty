@@ -23,7 +23,7 @@ type Triangle struct {
 	Height float64
 }
 
-// Shap Types with added methods
+// Shape Types with added methods
 func (r Rectangle) Area() float64 {
 	return r.Width * r.Height
 }
