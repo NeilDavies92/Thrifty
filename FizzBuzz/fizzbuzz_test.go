@@ -4,8 +4,8 @@ import (
 	"testing"
 )
 
-func TestFizz(t *testing.T) {
-	got := "fizz"
+func TestFizzBuzz(t *testing.T) {
+	got := FizzBuzz(4)
 	want := "fizz"
 
 	if got != want {
