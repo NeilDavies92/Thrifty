@@ -3,13 +3,12 @@ package main
 import "strconv"
 
 func FizzBuzz(i int) string {
-	// Divisible by 3
-	if i%3 == 0 {
-		return "fizz"
-	}
 
-	// Divisible by 5
-	if i%5 == 0 {
+	if i%3 == 0 && i%5 == 0 {
+		return "fizzbuzz"
+	} else if i%3 == 0 {
+		return "fizz"
+	} else if i%5 == 0 {
 		return "buzz"
 	}
 
