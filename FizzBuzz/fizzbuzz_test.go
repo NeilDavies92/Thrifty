@@ -5,10 +5,22 @@ import (
 )
 
 func TestFizzBuzz(t *testing.T) {
-	got := FizzBuzz(4)
-	want := "fizz"
 
-	if got != want {
-		t.Errorf("got %q want %q", got, want)
-	}
+	t.Run("Test Fizz", func(t *testing.T) {
+		got := FizzBuzz(3)
+		want := "fizz"
+
+		if got != want {
+			t.Errorf("got %q want %q", got, want)
+		}
+	})
+
+	t.Run("Test Buzz", func(t *testing.T) {
+		got := FizzBuzz(5)
+		want := "buzz"
+
+		if got != want {
+			t.Errorf("got %q want %q", got, want)
+		}
+	})
 }
