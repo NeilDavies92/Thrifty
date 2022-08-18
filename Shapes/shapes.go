@@ -4,6 +4,11 @@ import (
 	"math"
 )
 
+// Interfaces are a very powerful concept in statically typed languages
+// like Go because they allow you to make functions that can be used with
+// different types and createhighly-decoupled code whilst still maintaining
+// type-safety.
+
 type Shape interface {
 	Area() float64
 }
